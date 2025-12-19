@@ -1,0 +1,8 @@
+name: gsma
+channels:
+  - conda-forge
+dependencies:
+  # conda는 nvm의 `lts/*` 같은 "최신 LTS 자동" 별칭을 제공하지 않습니다.
+  # 따라서 현재 LTS 메이저 버전으로 맞추고, LTS 변경 시 이 숫자만 업데이트하는 방식을 권장합니다.
+  - nodejs=22
+
