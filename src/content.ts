@@ -141,13 +141,13 @@ export const COPY: Record<Language, Copy> = {
         subtitle: 'Founder & CEO, GSMA Consulting Group',
         educationTitle: 'Education',
         education: {
-          maTitle: 'M.A. in Conference Interpretation',
+          maTitle: 'M.A. in Korean-English Conference Interpretation',
           maSchool: 'Hankuk University of Foreign Studies (HUFS)',
-          maNote: '(Academic Excellence Scholarship)',
-          baTitle: 'B.A. in English for International Communication',
-          baSchool: 'Hankuk University of Foreign Studies (HUFS)',
-          secondaryTitle: 'Secondary Education',
-          secondaryPlace: 'New Zealand',
+          maNote: '',
+          baTitle: '',
+          baSchool: '',
+          secondaryTitle: '',
+          secondaryPlace: '',
         },
         militaryTitle: 'Military Service',
         military: {
@@ -157,7 +157,7 @@ export const COPY: Record<Language, Copy> = {
           jcsSubtitle2: 'Nuclear & WMD Response Center',
           jcsBullets: [
             'Interpreted for the JCS Chairman and three-, two-, and one-star generals at the Joint Chiefs of Staff',
-            'Delegations to USSTRATCOM and U.S. Space Command',
+            'Business trips to USSTRATCOM and U.S. Space Command',
             'Translated U.S. nuclear operations manuals',
           ],
           cbrnTitle: 'ROK CBRN Defense Command',
@@ -171,7 +171,7 @@ export const COPY: Record<Language, Copy> = {
         clientsTitle: 'Key Clients & Projects',
         clients: {
           consultingTitle: 'Consulting & Strategy',
-          consultingBullets: ['Global Consulting Firm', 'Coupang Security Team'],
+          consultingBullets: ['Global Consulting Firm', 'Coupang'],
           defenseTitle: 'Defense & Aerospace',
           defenseBullets: ['Boeing Korea', 'Airbus', 'Taurus Systems'],
           techTitle: 'Tech & IT',
@@ -260,11 +260,10 @@ export const COPY: Record<Language, Copy> = {
       longTermInternational: {
         title: 'Long-Term International Deployment',
         desc: 'Overseas on-site interpreter placement for multi-month defense and infrastructure projects',
-        currentProjectTitle: 'Current Project: Saudi Arabia Underground Bunker Construction',
+        currentProjectTitle: 'Recent Project: Saudi Arabia Underground Bunker Construction',
         currentProjectDates: 'August - December 2025',
-        upcomingTitle: 'Upcoming: Brazil Embraer Training Program',
-        upcomingDesc:
-          '2026 - Four interpreters supporting ROK Air Force pilots and maintenance crews',
+        upcomingTitle: 'Upcoming: Brazil Defense Company Training Program',
+        upcomingDesc: '2026 - Four interpreters supporting ROK Air Force pilot training program in Brazil',
       },
       domesticLongTerm: {
         title: 'Domestic Long-Term Engagement',
@@ -273,7 +272,7 @@ export const COPY: Record<Language, Copy> = {
         bullets: [
           'Dedicated interpreters for regular client meetings',
           'Strategic workshops and operational sessions',
-          'Proven track record with Global Consulting Firm',
+          'Proven track record with Global Consulting Firms',
           'Major multinational client support',
         ],
       },

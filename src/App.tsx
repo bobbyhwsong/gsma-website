@@ -175,19 +175,39 @@ function App() {
                     {t.about.card.educationTitle}
                   </h4>
                   <div className="space-y-3 text-sm">
-                    <div>
-                      <p className="font-semibold text-gray-900">{t.about.card.education.maTitle}</p>
-                      <p className="text-gray-600">{t.about.card.education.maSchool}</p>
-                      <p className="text-gray-500">{t.about.card.education.maNote}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-900">{t.about.card.education.baTitle}</p>
-                      <p className="text-gray-600">{t.about.card.education.baSchool}</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-gray-900">{t.about.card.education.secondaryTitle}</p>
-                      <p className="text-gray-600">{t.about.card.education.secondaryPlace}</p>
-                    </div>
+                    {(t.about.card.education.maTitle || t.about.card.education.maSchool || t.about.card.education.maNote) && (
+                      <div>
+                        {t.about.card.education.maTitle && (
+                          <p className="font-semibold text-gray-900">{t.about.card.education.maTitle}</p>
+                        )}
+                        {t.about.card.education.maSchool && (
+                          <p className="text-gray-600">{t.about.card.education.maSchool}</p>
+                        )}
+                        {t.about.card.education.maNote && (
+                          <p className="text-gray-500">{t.about.card.education.maNote}</p>
+                        )}
+                      </div>
+                    )}
+                    {(t.about.card.education.baTitle || t.about.card.education.baSchool) && (
+                      <div>
+                        {t.about.card.education.baTitle && (
+                          <p className="font-semibold text-gray-900">{t.about.card.education.baTitle}</p>
+                        )}
+                        {t.about.card.education.baSchool && (
+                          <p className="text-gray-600">{t.about.card.education.baSchool}</p>
+                        )}
+                      </div>
+                    )}
+                    {(t.about.card.education.secondaryTitle || t.about.card.education.secondaryPlace) && (
+                      <div>
+                        {t.about.card.education.secondaryTitle && (
+                          <p className="font-semibold text-gray-900">{t.about.card.education.secondaryTitle}</p>
+                        )}
+                        {t.about.card.education.secondaryPlace && (
+                          <p className="text-gray-600">{t.about.card.education.secondaryPlace}</p>
+                        )}
+                      </div>
+                    )}
                   </div>
                 </div>
 
