@@ -24,6 +24,8 @@ export type Copy = {
       role: string;
       subtitle: string;
       educationTitle: string;
+      careerTitle?: string;
+      careerBullets?: string[];
       education: {
         maTitle: string;
         maSchool: string;
@@ -43,17 +45,6 @@ export type Copy = {
         cbrnTitle: string;
         cbrnSubtitle: string;
         cbrnBullets: string[];
-      };
-      clientsTitle: string;
-      clients: {
-        consultingTitle: string;
-        consultingBullets: string[];
-        defenseTitle: string;
-        defenseBullets: string[];
-        techTitle: string;
-        techBullets: string[];
-        govTitle: string;
-        govBullets: string[];
       };
       expertiseTitle: string;
       expertiseTags: string[];
@@ -122,7 +113,7 @@ export const COPY: Record<Language, Copy> = {
     },
     langSwitchLabel: (next) => (next === 'ko' ? '한국어' : 'English'),
 
-    brand: 'GSMA Consulting Group',
+    brand: 'GSMA Consulting Group Inc.',
 
     home: {
       pill: 'Your Strategic Partner in Global Communications',
@@ -136,7 +127,7 @@ export const COPY: Record<Language, Copy> = {
     about: {
       title: 'Who We Are',
       card: {
-        name: 'KJ Kim',
+        name: 'CEO',
         role: 'Korean–English Conference Interpreter',
         subtitle: 'Founder & CEO, GSMA Consulting Group',
         educationTitle: 'Education',
@@ -166,23 +157,6 @@ export const COPY: Record<Language, Copy> = {
             'Interpreter to the Commander',
             'Translated DTRA training materials',
             'Supported bilateral ROK–U.S. cooperation',
-          ],
-        },
-        clientsTitle: 'Key Clients & Projects',
-        clients: {
-          consultingTitle: 'Consulting & Strategy',
-          consultingBullets: ['Global Consulting Firm', 'Coupang'],
-          defenseTitle: 'Defense & Aerospace',
-          defenseBullets: ['Boeing Korea', 'Airbus', 'Taurus Systems'],
-          techTitle: 'Tech & IT',
-          techBullets: ['Arista Networks', 'Yura Corporation'],
-          govTitle: 'Government & Diplomacy',
-          govBullets: [
-            'National Assembly Speaker',
-            'Former Prime Minister Kim Boo-kyum',
-            'Korea-Africa Summit',
-            'Korea-Cambodia Summit',
-            'APEC Workshops',
           ],
         },
         expertiseTitle: 'Areas of Expertise',
@@ -350,13 +324,13 @@ export const COPY: Record<Language, Copy> = {
     },
     langSwitchLabel: (next) => (next === 'en' ? 'English' : '한국어'),
 
-    brand: 'GSMA Consulting Group',
+    brand: 'GSMA Consulting Group Inc.',
 
     home: {
       pill: '글로벌 커뮤니케이션의 전략적 파트너',
-      headline: '국방·산업 분야 커뮤니케이션 스페셜리스트',
+      headline: '국방·방산 통번역 전문',
       subheadline:
-        '국방, 항공우주, 고난도 국제 커뮤니케이션 현장에서 요구되는\n              정밀한 통역·번역 솔루션을 제공합니다',
+        '국방, 항공우주, 국제회의 현장에서 요구되는 정확하고 신뢰할 수 있는 통번역 솔루션을 제공합니다.',
       ctaPrimary: '서비스 보기',
       ctaSecondary: '문의하기',
     },
@@ -364,18 +338,18 @@ export const COPY: Record<Language, Copy> = {
     about: {
       title: '회사 소개',
       card: {
-        name: 'KJ Kim',
-        role: '한–영 컨퍼런스 통역사',
+        name: '',
+        role: '한영국제회의통역사',
         subtitle: 'GSMA Consulting Group 대표',
         educationTitle: '학력',
         education: {
-          maTitle: '통번역대학원(컨퍼런스 통역) 석사',
-          maSchool: '한국외국어대학교(HUFS)',
-          maNote: '(성적우수 장학금)',
-          baTitle: '영어(국제커뮤니케이션) 학사',
-          baSchool: '한국외국어대학교(HUFS)',
-          secondaryTitle: '중등 교육',
-          secondaryPlace: '뉴질랜드',
+          maTitle: '한국외대 통번역대학원 석사',
+          maSchool: '',
+          maNote: '',
+          baTitle: '',
+          baSchool: '',
+          secondaryTitle: '',
+          secondaryPlace: '',
         },
         militaryTitle: '군 경력',
         military: {
@@ -384,37 +358,34 @@ export const COPY: Record<Language, Copy> = {
           jcsSubtitle1: '전략기획본부',
           jcsSubtitle2: '핵·WMD 대응센터',
           jcsBullets: [
-            '합참의장 및 장성(3/2/1성) 회의 통역 지원',
-            '미 전략사령부(USSTRATCOM) 및 미 우주사령부 방문 수행',
-            '미 핵작전 매뉴얼 번역',
+            '합참의장 미7함대사령관 조찬 통역, 전략기획본부장, 핵WMD센터장, 핵WMD센터 차장 통역',
+            '미국 전략사령부, 우주사령부 수행통역',
+            '미 핵작전교범 번역',
           ],
           cbrnTitle: '국군화생방방호사령부',
-          cbrnSubtitle: '핵특성화팀',
-          cbrnBullets: ['사령관 전담 통역', 'DTRA 교육자료 번역', '한–미 협력 지원'],
+          cbrnSubtitle: '핵특성분석팀',
+          cbrnBullets: ['사령관 전담 통역', 'DTRA 교육자료 번역'],
         },
-        clientsTitle: '주요 고객 및 프로젝트',
-        clients: {
-          consultingTitle: '컨설팅·전략',
-          consultingBullets: ['글로벌 컨설팅펌', '쿠팡 시큐리티 팀'],
-          defenseTitle: '국방·항공우주',
-          defenseBullets: ['보잉 코리아', '에어버스', '타우러스 시스템즈'],
-          techTitle: '테크·IT',
-          techBullets: ['아리스타 네트웍스', '유라 코퍼레이션'],
-          govTitle: '정부·외교',
-          govBullets: ['국회의장', '김부겸 전 국무총리', '한-아프리카 정상회의', '한-캄보디아 정상회의', 'APEC 워크숍'],
-        },
+        careerTitle: '주요 경력',
+        careerBullets: [
+          '한–미 CBRN 합동 훈련',
+          '주한미군 사령관 비공개 미팅',
+          'Donald Trump Jr. 방한 수행 통역',
+          '벨기에 국방총장 공식 리셉션',
+          '미 대사 및 한국 장관급 회의',
+        ],
         expertiseTitle: '전문 분야',
-        expertiseTags: ['국방·항공우주', '사이버보안', 'ESG·지속가능성', '대관', '비즈니스 전략', '국제관계'],
+        expertiseTags: ['국방·항공우주', '사이버보안', 'ESG·지속가능성', '비즈니스 전략', '국제관계'],
       },
     },
 
     services: {
-      title: '전문 언어 솔루션',
+      title: '통번역 솔루션',
       subtitle: '정밀성·보안·현장 이해가 중요한 산업에서 맞춤형 통역·번역 서비스를 제공합니다',
       cards: [
         {
           title: '국방·항공우주',
-          bullets: ['군사 전략 및 무기체계', '방산 조달 및 계약 협상', '방산 전시회 및 기술 협력', '국제 방산 인프라 현장 통역', '핵·CBRN 작전 교리/문서 번역'],
+          bullets: ['군사 전략 및 무기체계', '방산 조달 및 계약 협상', '방산 전시회 및 기술 협력', '핵·CBRN 작전 교리/문서 번역'],
         },
         {
           title: '국제 외교',
@@ -425,7 +396,7 @@ export const COPY: Record<Language, Copy> = {
           bullets: ['소프트웨어·하드웨어 솔루션', '사이버보안 및 데이터 보호', '전기차 개발', 'AI 기반 네트워크 보안 솔루션', '버추얼 프로덕션 및 디지털 트윈'],
         },
         {
-          title: '비즈니스·상거래',
+          title: '비즈니스/전략',
           bullets: ['기업 회의 및 전략 워크숍', '투자/협상 세션', '글로벌 컨설팅펌 타운홀 및 고객 미팅', '마케팅·사업개발 이니셔티브'],
         },
         {
@@ -436,20 +407,20 @@ export const COPY: Record<Language, Copy> = {
     },
 
     models: {
-      title: '서비스 제공 방식',
+      title: '다양한 서비스',
       subtitle: '단기 행사부터 수개월 해외 파견까지, 목적과 기간에 맞는 유연한 모델을 제안합니다',
       longTermInternational: {
         title: '해외 장기 파견',
         desc: '국방·인프라 프로젝트에 수개월 단위로 현장 상주 통역을 배치합니다',
-        currentProjectTitle: '진행 중: 사우디아라비아 지하 벙커 건설',
+        currentProjectTitle: '완료: 사우디아라비아 지하 벙커 건설',
         currentProjectDates: '2025년 8월 - 12월',
-        upcomingTitle: '예정: 브라질 엠브라에르(Embraer) 훈련 프로그램',
-        upcomingDesc: '2026년 - 대한민국 공군 조종사/정비 인력 지원(통역사 4명)',
+        upcomingTitle: '진행 중: 브라질 방산업체 교육훈련',
+        upcomingDesc: '2026년 - 브라질 현지 공군 조종/정비사 교육훈련 통역사 4명 파견',
       },
       domesticLongTerm: {
         title: '국내 장기 상주',
         desc: '글로벌 컨설팅펌 및 대기업을 위한 다개월~다년 단위 통역 계약을 운영합니다',
-        bullets: ['정기 미팅 전담 통역', '전략 워크숍 및 운영 세션', '글로벌 컨설팅펌 장기 수행 경험', '다국적 고객 지원'],
+        bullets: ['정기 미팅 전담 통역', '전략 워크숍 및 운영 세션', '글로벌 컨설팅펌 다수 장기 수행 경험', '다국적 고객 지원'],
       },
       smallCards: [
         { title: '단기·이벤트', bullets: ['단일 일정 통역', '다일 컨퍼런스', '전시회(ADEX, APEC)'] },
@@ -470,14 +441,14 @@ export const COPY: Record<Language, Copy> = {
         bullets: ['한–미 CBRN 합동 훈련', '주한미군 사령관 비공개 미팅', 'Donald Trump Jr. 방한 수행 통역', '벨기에 국방총장 공식 리셉션', '미 대사 및 한국 장관급 회의'],
       },
       mission: {
-        title: '미션',
+        title: 'Our Mission',
         body:
-          '국방·기술·국제협력이 교차하는 현장에서,\n              정확한 커뮤니케이션이 성과를 만들고 비용과 시간을 절감하며,\n              신뢰는 검증된 수행을 통해 쌓인다는 믿음으로 고객의 “소통 기반”을 책임집니다.',
+          'To serve as the communication backbone for organizations operating at the intersection of defense,\n              technology, and international cooperation—where words carry weight, precision saves time and money,\n              and trust is earned through proven performance.',
       },
     },
 
     contact: {
-      title: '글로벌 커뮤니케이션. 로컬 정밀함.',
+      title: 'Global Communication. Local Precision.',
       subtitle: 'GSMA Consulting Group과 함께, 국경을 넘는 소통에서 명확성·보안·임팩트를 높이는 맞춤형 언어 솔루션을 설계하세요.',
       cards: {
         locationTitle: '주소',
@@ -488,8 +459,8 @@ export const COPY: Record<Language, Copy> = {
     },
 
     footer: {
-      copyright: '© 2025 GSMA Consulting Group. 모든 권리 보유.',
-      tagline: 'Strive for Greatness',
+      copyright: '© 2025 GSMA Consulting Group. All rights reserved.',
+      tagline: '',
     },
   },
 };

@@ -163,7 +163,9 @@ function App() {
           <div className="max-w-4xl mx-auto mb-20">
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
               <div className="text-center mb-8">
-                <h3 className="text-3xl font-bold text-gray-900 mb-2">{t.about.card.name}</h3>
+                {t.about.card.name && (
+                  <h3 className="text-3xl font-bold text-gray-900 mb-2">{t.about.card.name}</h3>
+                )}
                 <p className="text-xl text-blue-600 font-medium mb-4">{t.about.card.role}</p>
                 <p className="text-gray-600">{t.about.card.subtitle}</p>
               </div>
@@ -243,47 +245,6 @@ function App() {
                 </div>
               </div>
 
-              <div className="border-t border-gray-200 pt-6">
-                <h4 className="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                  <Briefcase className="text-blue-600 mr-2" size={20} />
-                  {t.about.card.clientsTitle}
-                </h4>
-                <div className="grid md:grid-cols-4 gap-6 text-sm">
-                  <div>
-                    <p className="font-semibold text-gray-900 mb-2">{t.about.card.clients.consultingTitle}</p>
-                    <ul className="space-y-1 text-gray-600">
-                      {t.about.card.clients.consultingBullets.map((b, i) => (
-                        <li key={i}>• {b}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 mb-2">{t.about.card.clients.defenseTitle}</p>
-                    <ul className="space-y-1 text-gray-600">
-                      {t.about.card.clients.defenseBullets.map((b, i) => (
-                        <li key={i}>• {b}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 mb-2">{t.about.card.clients.techTitle}</p>
-                    <ul className="space-y-1 text-gray-600">
-                      {t.about.card.clients.techBullets.map((b, i) => (
-                        <li key={i}>• {b}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-900 mb-2">{t.about.card.clients.govTitle}</p>
-                    <ul className="space-y-1 text-gray-600">
-                      {t.about.card.clients.govBullets.map((b, i) => (
-                        <li key={i}>• {b}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
               <div className="border-t border-gray-200 pt-6 mt-6">
                 <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
                   <Target className="text-blue-600 mr-2" size={20} />
@@ -300,6 +261,20 @@ function App() {
                   ))}
                 </div>
               </div>
+
+              {lang === 'ko' && t.about.card.careerTitle && t.about.card.careerBullets?.length ? (
+                <div className="border-t border-gray-200 pt-6 mt-6">
+                  <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center">
+                    <Briefcase className="text-blue-600 mr-2" size={20} />
+                    {t.about.card.careerTitle}
+                  </h4>
+                  <ul className="mt-2 space-y-1 text-gray-600 text-sm">
+                    {t.about.card.careerBullets.map((b, i) => (
+                      <li key={i}>• {b}</li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
             </div>
           </div>
 
@@ -354,7 +329,7 @@ function App() {
             <div className="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8 mb-12">
+          <div className={lang === 'ko' ? 'mb-12' : 'grid lg:grid-cols-2 gap-8 mb-12'}>
             <div className="bg-gradient-to-br from-slate-900 to-blue-950 rounded-2xl p-8 text-white">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center">
@@ -377,82 +352,90 @@ function App() {
               </div>
             </div>
 
-            <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
-                  <Briefcase className="text-white" size={24} />
+            {lang !== 'ko' && (
+              <div className="bg-blue-50 rounded-2xl p-8 border border-blue-100">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center">
+                    <Briefcase className="text-white" size={24} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900">{t.models.domesticLongTerm.title}</h3>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">{t.models.domesticLongTerm.title}</h3>
-              </div>
-              <p className="text-gray-700 mb-6">
-                {t.models.domesticLongTerm.desc}
-              </p>
-              <ul className="space-y-3">
-                {t.models.domesticLongTerm.bullets.map(b => (
-                  <li key={b} className="flex items-start space-x-2">
-                    <CheckCircle2 className="text-blue-600 mt-0.5 flex-shrink-0" size={20} />
-                    <span className="text-gray-700">{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {t.models.smallCards.map(card => (
-              <div key={card.title} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-                <h4 className="text-xl font-bold text-gray-900 mb-4">{card.title}</h4>
-                <ul className="space-y-2 text-gray-700">
-                  {card.bullets.map(b => (
+                <p className="text-gray-700 mb-6">
+                  {t.models.domesticLongTerm.desc}
+                </p>
+                <ul className="space-y-3">
+                  {t.models.domesticLongTerm.bullets.map(b => (
                     <li key={b} className="flex items-start space-x-2">
-                      <ChevronRight size={18} className="text-blue-600 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">{b}</span>
+                      <CheckCircle2 className="text-blue-600 mt-0.5 flex-shrink-0" size={20} />
+                      <span className="text-gray-700">{b}</span>
                     </li>
                   ))}
                 </ul>
               </div>
-            ))}
+            )}
           </div>
+
+          {lang !== 'ko' && (
+            <div className="grid md:grid-cols-3 gap-8">
+              {t.models.smallCards.map(card => (
+                <div key={card.title} className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                  <h4 className="text-xl font-bold text-gray-900 mb-4">{card.title}</h4>
+                  <ul className="space-y-2 text-gray-700">
+                    {card.bullets.map(b => (
+                      <li key={b} className="flex items-start space-x-2">
+                        <ChevronRight size={18} className="text-blue-600 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
       <section id="projects" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t.projects.title}</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              {t.projects.subtitle}
-            </p>
-            <div className="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
-          </div>
+          {lang !== 'ko' && (
+            <>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t.projects.title}</h2>
+                <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                  {t.projects.subtitle}
+                </p>
+                <div className="w-24 h-1 bg-blue-600 mx-auto mt-4"></div>
+              </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
-              <Users className="text-blue-600 mb-4" size={32} />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.projects.left.title}</h3>
-              <ul className="space-y-3">
-                {t.projects.left.bullets.map(b => (
-                  <li key={b} className="flex items-start space-x-2">
-                    <CheckCircle2 className="text-blue-600 mt-0.5 flex-shrink-0" size={20} />
-                    <span className="text-gray-700">{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+              <div className="grid md:grid-cols-2 gap-8 mb-16">
+                <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                  <Users className="text-blue-600 mb-4" size={32} />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.projects.left.title}</h3>
+                  <ul className="space-y-3">
+                    {t.projects.left.bullets.map(b => (
+                      <li key={b} className="flex items-start space-x-2">
+                        <CheckCircle2 className="text-blue-600 mt-0.5 flex-shrink-0" size={20} />
+                        <span className="text-gray-700">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-            <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
-              <Award className="text-blue-600 mb-4" size={32} />
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.projects.right.title}</h3>
-              <ul className="space-y-3">
-                {t.projects.right.bullets.map(b => (
-                  <li key={b} className="flex items-start space-x-2">
-                    <ChevronRight className="text-blue-600 mt-0.5 flex-shrink-0" size={20} />
-                    <span className="text-gray-700">{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+                <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                  <Award className="text-blue-600 mb-4" size={32} />
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{t.projects.right.title}</h3>
+                  <ul className="space-y-3">
+                    {t.projects.right.bullets.map(b => (
+                      <li key={b} className="flex items-start space-x-2">
+                        <ChevronRight className="text-blue-600 mt-0.5 flex-shrink-0" size={20} />
+                        <span className="text-gray-700">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </>
+          )}
 
           <div className="bg-gradient-to-br from-blue-600 to-blue-800 rounded-2xl p-12 text-white text-center">
             <h3 className="text-3xl font-bold mb-4">{t.projects.mission.title}</h3>
@@ -516,8 +499,12 @@ function App() {
             </div>
             <p className="text-gray-400 text-sm text-center md:text-right">
               {t.footer.copyright}
-              <br />
-              {t.footer.tagline}
+              {t.footer.tagline ? (
+                <>
+                  <br />
+                  {t.footer.tagline}
+                </>
+              ) : null}
             </p>
           </div>
         </div>
